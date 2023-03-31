@@ -1,0 +1,26 @@
+I apologize for any confusion. If the text is disappearing, it might be due to the text-overflow property being set to 'clip.' To ensure that the text is visible but still does not have horizontal scroll, you can change the text-overflow property to ellipsis instead. This will display an ellipsis (...) to indicate that the text has been truncated. Here's the modified example:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Outside Window Example</title>
+<style>
+  .container {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    border: 1px solid #000;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    This is a long line of text that will be truncated at the edge of the container with an ellipsis, without any horizontal scrollbars.
+  </div>
+</body>
+</html>
