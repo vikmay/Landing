@@ -1,0 +1,647 @@
+$background-color-main :#FBFBFB;
+$primary-color: #FF9100;
+$secondary-color: #00DBD0;
+$text-color: #D67E09;
+$btn-radius: 10px;
+$marginRight: 40px;
+
+@mixin card-hover {
+    background: $primary-color;
+    color: $background-color-main;
+    border: 2px solid $primary-color;
+    background-image: url(./img/LadyHat.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 20px;
+}
+
+@mixin blue-line {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background-color: #00DBD0;
+    border-radius: 20px;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+body {
+    box-sizing: border-box;
+    @extend %flex-col-center;
+    background-color: $background-color-main;
+
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .img_container {
+        height: 78px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        padding: 0 3%;
+
+        img {
+            width: 300px;
+            height: 68px;
+        }
+
+        @media screen and (max-width: 580px) {
+            border-radius: 40px;
+        }
+    }
+
+    .btn-contact {
+        height: 46px;
+        border: none;
+        background-color: $primary-color;
+        color: $background-color-main;
+        border-radius: $btn-radius;
+        padding: 0 5%;
+        margin-right: $marginRight;
+
+        color: #FFF;
+        font-family: Lato;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 580px) {
+            width: 70%;
+            margin-right: 0;
+        }
+    }
+
+    @media screen and (max-width: 580px) {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+//hero section
+.hero {
+    width: 90%;
+    position: relative;
+
+
+}
+
+.hero__wrapper {
+    @extend %flex-center;
+    gap: 15%;
+    margin: 10% 10% 10% 0;
+
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+        margin: 10% 0 0 0;
+    }
+
+    &_titleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+
+    h2 {
+        color: #374B5C;
+        font-family: Lato;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    h1 {
+        @extend h2;
+        font-size: 56px;
+    }
+
+    p {
+        @extend h2;
+        font-family: Libre Baskerville;
+        font-size: 20px;
+        margin: 5% 0
+    }
+
+    button {
+        height: 46px;
+        border: none;
+        background-color: $primary-color;
+        color: $background-color-main;
+        border-radius: $btn-radius;
+        padding: 0 5%;
+        margin-right: $marginRight;
+        color: #FFF;
+
+        font-family: Libre Baskerville;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin: 0;
+        }
+    }
+
+    svg {
+        position: absolute;
+        left: -6%;
+        bottom: -80px;
+
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
+    }
+
+    &_imgContainer {
+        position: relative;
+
+        @media screen and (max-width: 500px) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20%;
+        }
+
+        .backImg {
+            width: 23vw;
+            height: 23vw;
+            background: url(./img/nick-morrison-FHnnjk1Yj7Y-unsplash.png), lightgray 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 5px dashed $primary-color;
+
+
+        }
+
+        .topImg {
+            @extend .backImg;
+            background: url(./img/myriam-jessier-eveI7MOcSmw-unsplash.png), lightgray 50%;
+            background-repeat: no-repeat;
+            position: absolute;
+            background-size: cover;
+            top: 10%;
+            left: 50%;
+
+            @media screen and (max-width: 500px) {
+                position: inherit;
+                left: 0;
+            }
+
+        }
+    }
+
+}
+
+//welcome section
+.welcome {
+    @extend %flex-col-center;
+    width: 90%;
+    margin-top: 30px;
+
+    &__title_container {
+        max-width: 90%;
+        @extend %flex-col-center;
+        text-align: center;
+        gap: 20px;
+        margin-bottom: 30px;
+
+        h2 {
+            color: #374B5C;
+
+            font-family: Libre Baskerville;
+            font-size: 39px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        p {
+            @extend h2;
+            font-size: 22px;
+
+        }
+    }
+
+    &__card_wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+
+        &__card {
+            min-width: 200px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-radius: 15px;
+            border: 2px dashed lightgrey;
+            background-image: url(./img/LadyHat_orange.png);
+            background-repeat: no-repeat;
+            background-position-y: 20px;
+            background-position-x: center;
+            padding: 3%;
+            flex-basis: 10%;
+
+
+
+            &:hover {
+                @include card-hover();
+            }
+
+            &_active {
+                @extend .welcome__card_wrapper__card;
+                @include card-hover();
+            }
+
+            h3 {
+                font-family: Libre Baskerville;
+                font-size: 19px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            p {
+                margin-top: 20px;
+                font-family: Libre Baskerville;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+    }
+
+}
+
+// client section
+.client {
+    width: 100%;
+    @extend %flex-col-center;
+    margin: 10% 0;
+
+    &__wrapper {
+        @extend %flex-center;
+        width: 80%;
+
+        .img-left_corner {
+            margin-bottom: 150px;
+
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
+
+        &_client_card {
+            width: 50%;
+            @extend %flex-col-center;
+            gap: 20px;
+
+            p {
+                color: #374B5C;
+                text-align: center;
+                font-family: Libre Baskerville;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        .img-right_corner {
+            margin-top: 300px;
+
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+
+        }
+    }
+}
+
+// subscribe section
+.subscribe {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    @extend %flex-col-center;
+
+    .top-books {
+        max-width: 300px;
+    }
+
+    &__wrapper {
+        @extend %flex-col-center;
+        width: 50%;
+        gap: 50px;
+
+        h2 {
+            color: #374B5C;
+            font-family: Libre Baskerville;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 60px;
+        }
+
+        p {
+            color: #374B5C;
+            text-align: center;
+            font-family: Libre Baskerville;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .email-subscribe_container {
+            border-radius: 50px;
+            background: #F6F5F1;
+
+            @media screen and (max-width: 645px) {
+                background: none;
+            }
+
+        }
+
+        input {
+            height: 46px;
+            border: none;
+            background: #F6F5F1;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            padding-inline-start: 30px;
+            outline: none;
+
+            @media screen and (max-width: 645px) {
+                border-radius: 50px;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        button {
+            height: 46px;
+            border: none;
+            background-color: $primary-color;
+            color: $background-color-main;
+            border-radius: 50px;
+            padding: 0 30px;
+            cursor: pointer;
+        }
+    }
+
+    .right-book {
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+
+        @media screen and (max-width: 450px) {
+            display: none;
+        }
+
+    }
+}
+
+.blog {
+    text-align: center;
+    @extend %flex-col-center;
+    margin-top: 10%;
+
+    .titleImg {
+        width: 83px;
+        height: 54px;
+    }
+
+    &__title-container {
+        @extend %flex-col-center;
+        gap: 20px;
+
+        h2 {
+            color: #374B5C;
+            font-family: Libre Baskerville;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        p {
+            width: 55%;
+            color: #374B5C;
+            text-align: center;
+            font-family: Libre Baskerville;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding-bottom: 30px;
+        }
+    }
+
+    &__card__wrapper {
+        @extend %flex-center;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        &_card {
+            @extend %flex-col-center;
+            gap: 20px;
+            width: min-content;
+            height: 360px;
+            box-shadow: 0 0 10px rgba(169, 169, 169, 0.5);
+            border-radius: 20px;
+
+            &:hover {
+                background: #FF9100;
+                color: $background-color-main;
+            }
+
+            img {
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+
+            }
+
+            h3 {
+                color: #be8945;
+                font-family: Libre Baskerville;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            &:hover h3 {
+                color: $background-color-main;
+            }
+
+            p {
+                color: #374B5C;
+
+                text-align: center;
+                font-family: Libre Baskerville;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            &:hover p {
+                color: $background-color-main;
+            }
+
+            .read-more {
+                @extend %flex-col-center;
+                gap: 10px;
+                cursor: pointer;
+
+                &::after {
+                    @include blue-line();
+                }
+
+                a {
+                    color: #374B5C;
+                    font-family: Libre Baskerville;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}
+
+footer {
+    width: 100%;
+    background-color: #EE8700;
+    margin-top: 30px;
+    @extend %flex-col-center;
+
+    h4 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &::after {
+            @include blue-line();
+        }
+    }
+}
+
+.footer_wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: $background-color-main;
+    padding: 5% 0;
+
+    .logo_copyright {
+        width: 30%;
+        min-width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        img {
+            width: 150px;
+        }
+    }
+
+    .nav_wrapper {
+        width: 30%;
+        min-width: 30%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            gap: 10px;
+
+            a {
+                text-decoration: none;
+                color: $background-color-main;
+            }
+        }
+    }
+
+
+    .social {
+        min-width: 30%;
+        display: flex;
+        justify-content: flex-end;
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            @media screen and (max-width: 580px) {
+                margin-top: 30px;
+            }
+        }
+
+        .social_links_container {
+            display: flex;
+            gap: 15px;
+
+
+        }
+    }
+}
